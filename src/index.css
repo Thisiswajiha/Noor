@@ -1,0 +1,100 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Space Grotesk", "Poppins", sans-serif;
+  --font-poppins: "Poppins", sans-serif;
+  
+  --color-gold-light: #FFE082;
+  --color-gold: #FFC928;
+  --color-gold-dark: #C99A00;
+  --color-dark-bg: #050505;
+  --color-card-bg: #111111;
+  --color-card-border: rgba(255, 201, 40, 0.08);
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    background-color: #030303;
+    background-image: 
+      radial-gradient(circle at 50% 0%, #1c1503 0%, #030303 70%),
+      radial-gradient(circle at 100% 100%, #0d0a02 0%, #030303 50%);
+    background-attachment: fixed;
+    color: #ffffff;
+  }
+
+  /* Custom high-fidelity scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #050505;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #1a1a1a;
+    border-radius: 4px;
+    border: 2px solid #050505;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #FFC928;
+  }
+}
+
+/* 3D Glassmorphism, Specular Lighting, and Ambient Glow effects */
+.ambient-glow-circle {
+  filter: blur(150px);
+  opacity: 0.12;
+  pointer-events: none;
+  will-change: transform;
+}
+
+.glass-card {
+  background: rgba(10, 10, 10, 0.45);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 201, 40, 0.05);
+  box-shadow: 
+    0 10px 40px -10px rgba(0, 0, 0, 0.5),
+    inset 0 1px 1px rgba(255, 255, 255, 0.02);
+  transition: border-color 0.6s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.6s cubic-bezier(0.16, 1, 0.3, 1), transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.glass-card:hover {
+  border-color: rgba(255, 201, 40, 0.15);
+  box-shadow: 
+    0 20px 50px -15px rgba(255, 201, 40, 0.04),
+    0 0 30px rgba(255, 201, 40, 0.02),
+    inset 0 1px 1px rgba(255, 255, 255, 0.03);
+}
+
+.glass-header {
+  background: rgba(5, 5, 5, 0.4);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-b: 1px solid rgba(255, 201, 40, 0.03);
+}
+
+.glow-hover {
+  transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.glow-hover:hover {
+  box-shadow: 0 0 40px rgba(255, 201, 40, 0.12);
+  border-color: rgba(255, 201, 40, 0.2);
+}
+
+.custom-grid-bg {
+  background-size: 50px 50px;
+  background-image: 
+    linear-gradient(to right, rgba(255, 201, 40, 0.005) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 201, 40, 0.005) 1px, transparent 1px);
+}
+
+.text-gradient-gold {
+  background: linear-gradient(135deg, #FFF5D1 0%, #FFC928 50%, #C99A00 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
